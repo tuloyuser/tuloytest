@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Grizzly Cart
+ * @package	   Grizzly_Usaepay
+ * @copyright  Copyright (c) 2009 Digital Spyders Inc. All rights reserved.
+ */
+-->
+<config>
+	<modules>
+		<Grizzly_Usaepay>
+			<version>1.0.3</version>
+		</Grizzly_Usaepay>
+	</modules>
+	<global>
+		<models>
+			<usaepay>
+				<class>Grizzly_Usaepay_Model</class>
+				<resourceModel>usaepay_mysql4</resourceModel>
+			</usaepay>
+			<usaepay_mysql4>
+				<class>Grizzly_Usaepay_Model_Mysql4</class>
+				<entities>
+					<basic_debug><table>usaepay_basic_debug</table></basic_debug>
+				</entities>
+			</usaepay_mysql4>
+		</models>
+		<helpers>
+			<usaepay>
+				<class>Grizzly_Usaepay_Helper</class>
+			</usaepay>
+		</helpers>
+		<resources>
+			<usaepay_setup>
+				<setup>
+					<module>Grizzly_Usaepay</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</usaepay_setup>
+			<usaepay_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</usaepay_write>
+			<usaepay_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</usaepay_read>
+		</resources>
+	</global>
+
+	<frontend>
+		<translate>
+			<modules>
+				<Grizzly_Usaepay>
+					<files>
+						<default>Grizzly_Usaepay.csv</default>
+					</files>
+				</Grizzly_Usaepay>
+			</modules>
+		</translate>
+	</frontend>
+	
+	<adminhtml>
+		<translate>
+			<modules>
+				<Grizzly_Usaepay>
+					<files>
+						<default>Grizzly_Usaepay.csv</default>
+					</files>
+				</Grizzly_Usaepay>
+			</modules>
+		</translate>
+	</adminhtml>
+
+	<default>
+		<payment>
+			<usaepay_basic>
+				<active>0</active>
+				<cctypes>AE,VI,MC,DI</cctypes>
+				<debug>0</debug>
+				<email_customer>0</email_customer>
+				<model>usaepay/basic</model>
+				<order_status>1</order_status>
+				<payment_action>authorize</payment_action>
+				<test>1</test>
+				<sandbox>1</sandbox>
+				<title>Credit Card (USAePay)</title>
+				<trans_key backend_model="adminhtml/system_config_backend_encrypted"/>
+				<trans_pin backend_model="adminhtml/system_config_backend_encrypted"/>
+				<allowspecific>0</allowspecific>
+			</usaepay_basic>
+		</payment>
+	</default>
+</config>

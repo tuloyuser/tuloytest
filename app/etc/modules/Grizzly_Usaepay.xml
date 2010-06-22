@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Grizzly Cart
+ * @package	   Grizzly_Usaepay
+ * @copyright  Copyright (c) 2009 Digital Spyders Inc. All rights reserved.
+ */
+-->
+<config>
+    <modules>
+        <Grizzly_Usaepay>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Mage_Payment />
+            </depends>
+        </Grizzly_Usaepay>
+    </modules>
+</config>        
